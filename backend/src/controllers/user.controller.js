@@ -38,6 +38,7 @@ const login = async (req, res) => {
 
 
 const register = async (req, res) => {
+    console.log("REGISTER REQ BODY", req.body)
     const { name, username, password } = req.body;
 
 

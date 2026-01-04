@@ -22,17 +22,23 @@ app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use("/api/v1/users", userRoutes);
 
 const start = async () => {
-    app.set("mongo_user")
-    const connectionDb = await mongoose.connect("mongodb+srv://nikhiloggu_db_user:iMkpxbVqUWnDtxyx@zerodhacluster.x4xuo9r.mongodb.net/zoom")
+    try {
+        console.log("Starting server...");
 
-    console.log(`MONGO Connected DB HOst: ${connectionDb.connection.host}`)
-    server.listen(app.get("port"), () => {
-        console.log("LISTENIN ON PORT 8000")
-    });
+        const connectionDb = await mongoose.connect(
+          "mongodb+srv://nikhiloggu_db_user:iMkpxbVqUWnDtxyx@zerodhacluster.x4xuo9r.mongodb.net/zoom"
+        );
 
+        console.log(`MONGO Connected DB Host: ${connectionDb.connection.host}`);
 
+        server.listen(app.get("port"), () => {
+            console.log("LISTENING ON PORT", app.get("port"));
+        });
 
-}
+    } catch (error) {
+        console.error("FAILED TO START SERVER:", error);
+    }
+};
 
 
 
