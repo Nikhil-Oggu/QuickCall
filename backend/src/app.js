@@ -36,7 +36,7 @@ const start = async () => {
         });
 
     } catch (error) {
-        console.error("FAILED TO START SERVER:", error);
+        console.error("FAILED TO START SERVER....:", error);
     }
 };
 
