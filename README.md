@@ -9,7 +9,9 @@ https://quickcalll.onrender.com/
 ## Tech Stack
 # Frontend
 React 18
+
 React Router
+
 WebRTC
 Socket.IO Client
 Material UI
